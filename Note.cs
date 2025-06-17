@@ -12,5 +12,7 @@ public class Note
     }
     public string Title { get; set; }
     public string Description { get; set; }
+    
+    public Guid Id { get; init; } = Guid.NewGuid();
     public DateTime CreationTime { get; init; } = DateTime.Now;
 }
