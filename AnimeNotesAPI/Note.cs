@@ -1,18 +1,12 @@
 namespace AnimeNotesAPI;
 
-public class Note
+public abstract record class Note
 {
-    protected Note() { }
-
-    public Note(string title, string description)
-    {
-        Title = title;
-        Description = description;
-        CreationTime = DateTime.Now;
-    }
-    public string Title { get; set; }
-    public string Description { get; set; }
+    protected const string NO_DATA = "No data";
     
-    public Guid Id { get; init; } = Guid.NewGuid();
-    public DateTime CreationTime { get; init; } = DateTime.Now;
+    protected Note() { }
+    public virtual string Title { get; init; } = NO_DATA;
+    public virtual string Description { get; init; } = NO_DATA;
+    public virtual Guid Id { get; init; }
+    public virtual DateTime CreationTime { get; init; } = DateTime.Now;
 }
