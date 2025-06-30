@@ -4,7 +4,7 @@ using AnimeNotesAPI.enums;
 
 namespace AnimeNotesAPI;
 
-public record  AnimeNote : Note
+public record AnimeNote : Note
 {
     public int Rating { get; init; }
     public TimeSpan PeriodOfWatching { get; init; }
