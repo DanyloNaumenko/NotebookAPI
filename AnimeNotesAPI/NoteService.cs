@@ -1,6 +1,6 @@
 namespace AnimeNotesAPI;
 
-public abstract class NoteManager
+public abstract class NoteService
 {
     protected Dictionary<Guid, Note> _cachedNotes = new();
 
