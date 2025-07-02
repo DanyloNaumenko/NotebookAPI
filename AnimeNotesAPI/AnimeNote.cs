@@ -8,7 +8,7 @@ public record AnimeNote : Note
 {
     public int Rating { get; init; }
     public TimeSpan PeriodOfWatching { get; init; }
-    public List<Genres> Genres { get; init; } = new();
-    public byte[] Image { get; init; } = Array.Empty<byte>();
+    public List<Genres> Genres { get; init; }
+    public byte[] Image { get; init; }
     public WatchingStatus Status { get; init; }
 }

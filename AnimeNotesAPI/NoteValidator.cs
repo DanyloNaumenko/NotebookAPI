@@ -1,6 +1,6 @@
 namespace AnimeNotesAPI;
 
-public class NoteValidator : INoteValidator<Note>
+public class NoteValidator : INoteValidator
 {
     public bool Validate(Note note)
     {

@@ -1,6 +1,6 @@
 namespace AnimeNotesAPI;
 
-public interface INoteValidator<TNote> where TNote : Note
+public interface INoteValidator
 {
-    bool Validate(TNote note);
+    bool Validate(Note note);
 }
