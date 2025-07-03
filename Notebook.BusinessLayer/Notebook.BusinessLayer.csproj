@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
-        <Nullable>enable</Nullable>
+        <RootNamespace>Notebook.BusinessLayer</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>Notebook.AnimeNotesAPI</RootNamespace>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
 </Project>

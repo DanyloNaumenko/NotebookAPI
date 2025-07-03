@@ -1,6 +1,9 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimeNotesAPI", "AnimeNotesAPI\AnimeNotesAPI.csproj", "{06D22BC2-70DD-4F94-8077-368401C2FB98}"
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebook.AnimeNotesAPI", "Notebook.AnimeNotesAPI\Notebook.AnimeNotesAPI.csproj", "{06D22BC2-70DD-4F94-8077-368401C2FB98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebook.BusinessLayer", "Notebook.BusinessLayer\Notebook.BusinessLayer.csproj", "{25FA3467-B53C-4181-BAF6-FE3FBA247015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebook.Infrastructure", "Notebook.Infrastructure\Notebook.Infrastructure.csproj", "{927A457E-7C86-4752-8620-104217B84867}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +15,13 @@ Global
 		{06D22BC2-70DD-4F94-8077-368401C2FB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06D22BC2-70DD-4F94-8077-368401C2FB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06D22BC2-70DD-4F94-8077-368401C2FB98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25FA3467-B53C-4181-BAF6-FE3FBA247015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {25FA3467-B53C-4181-BAF6-FE3FBA247015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {25FA3467-B53C-4181-BAF6-FE3FBA247015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {25FA3467-B53C-4181-BAF6-FE3FBA247015}.Release|Any CPU.Build.0 = Release|Any CPU
+        {927A457E-7C86-4752-8620-104217B84867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {927A457E-7C86-4752-8620-104217B84867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {927A457E-7C86-4752-8620-104217B84867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {927A457E-7C86-4752-8620-104217B84867}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
