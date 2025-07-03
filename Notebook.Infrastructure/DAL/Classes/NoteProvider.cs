@@ -3,6 +3,7 @@ using Notebook.BusinessLayer.Interfaces;
 
 namespace Notebook.Infrastructure.DAL.Classes;
 
+//TODO Implement Class
 public class NoteProvider : INoteProvider
 {
     public Note Create()

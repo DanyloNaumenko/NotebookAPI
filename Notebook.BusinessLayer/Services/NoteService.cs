@@ -8,7 +8,7 @@ public class NoteService : INoteService
     private readonly ILogger _logService;
     private readonly INoteValidator _validator;
     private readonly INoteProvider _noteProvider;
-    private readonly Dictionary<Guid, Note> _cachedNotes = new();
+    private static readonly Dictionary<Guid, Note> _cachedNotes = new();
 
     public NoteService(ILogger logService, INoteValidator validator, INoteProvider noteProvider)
     {
