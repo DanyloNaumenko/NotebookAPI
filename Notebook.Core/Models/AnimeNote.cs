@@ -1,6 +1,6 @@
 using Notebook.BusinessLayer.Enums;
 
-namespace Notebook.BusinessLayer.DomainModels;
+namespace Notebook.Infrastructure.DAL.Models;
 
 public record AnimeNote : Note
 {

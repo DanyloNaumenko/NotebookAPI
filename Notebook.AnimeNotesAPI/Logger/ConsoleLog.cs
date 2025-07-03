@@ -1,6 +1,6 @@
-namespace Notebook.Infrastructure;
+namespace Notebook.AnimeNotesAPI;
 
-public class LogService
+public class ConsoleLog : ILogger
 {
     public void Log(string message)
     {

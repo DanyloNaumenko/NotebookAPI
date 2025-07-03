@@ -1,4 +1,4 @@
-namespace Notebook.BusinessLayer.DomainModels
+namespace Notebook.Infrastructure.DAL.Models
 {
     public record class Note
     {
