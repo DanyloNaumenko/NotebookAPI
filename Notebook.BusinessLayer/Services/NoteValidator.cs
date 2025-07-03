@@ -1,4 +1,7 @@
-namespace AnimeNotesAPI;
+using Notebook.BusinessLayer.DomainModels;
+using Notebook.BusinessLayer.Interfaces;
+
+namespace Notebook.BusinessLayer.Services;
 
 public class NoteValidator : INoteValidator
 {

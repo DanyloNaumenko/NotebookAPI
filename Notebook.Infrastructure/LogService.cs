@@ -1,4 +1,4 @@
-namespace AnimeNotesAPI;
+namespace Notebook.Infrastructure;
 
 public class LogService
 {

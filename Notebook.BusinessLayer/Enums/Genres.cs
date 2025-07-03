@@ -1,4 +1,4 @@
-namespace AnimeNotesAPI.enums;
+namespace Notebook.BusinessLayer.Enums;
 
 public enum Genres
 {

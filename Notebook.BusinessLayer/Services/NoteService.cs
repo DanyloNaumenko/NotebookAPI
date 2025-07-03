@@ -1,0 +1,85 @@
+using Notebook.BusinessLayer.DomainModels;
+using Notebook.BusinessLayer.Interfaces;
+
+namespace Notebook.BusinessLayer.Services;
+
+public class NoteService : INoteService
+{
+    private readonly ILogger _logService;
+    private readonly INoteValidator _validator;
+    private readonly INoteProvider _noteProvider;
+    private readonly Dictionary<Guid, Note> _cachedNotes = new();
+
+    public NoteService(ILogger logService, INoteValidator validator, INoteProvider noteProvider)
+    {
+        _logService = logService;
+        _validator = validator;
+        _noteProvider = noteProvider;
+    }
+    
+    public Note Create()
+    {
+        var note = _noteProvider.Create();
+        AddNoteToCache(note);
+        _logService.Log($"Created new note {note.Id} successfully");
+        return note;
+    }
+    public Note GetNoteById(Guid id) 
+    {
+        if (!_cachedNotes.TryGetValue(id, out var note))
+            throw new KeyNotFoundException($"Note with id {id} not found.");
+        _logService.Log($"Got note {id} successfully");
+        return note;
+    }
+    public bool UpdateNoteById(Guid id, Note newNote)
+    {
+        var result = false;
+        if (!ValidateNote(newNote)) return false;
+        
+        result = _noteProvider.Update(id, newNote);
+        UpdateNoteInCache(id, newNote);
+        _logService.Log($"Updated note {id} successfully");
+        return result; 
+    }
+    public bool DeleteNoteById(Guid id) 
+    {
+        var result = false;
+        result = _noteProvider.Delete(id);
+        DeleteNoteFromCache(id);
+        _logService.Log($"Deleted note {id} successfully");
+        return result;
+    }
+    private void UpdateNoteInCache(Guid id, Note newNote)
+    {
+        if (!_cachedNotes.ContainsKey(id))
+        {
+            _logService.Log($"Note with id {id} not found in cache");
+            throw new KeyNotFoundException($"Note with ID {id} not found in cache for update.");
+        }
+        _cachedNotes[id] = newNote;
+        _logService.Log($"Updated note {id} in cache successfully");
+        
+    }
+    private void AddNoteToCache(Note note)
+    {
+        if (!_cachedNotes.TryAdd(note.Id, note))
+        {
+            throw new InvalidOperationException($"Note with ID {note.Id} already exists in cache.");
+        }
+
+        _logService.Log($"Added note {note.Id} to cache");
+        return;
+    }
+    private void DeleteNoteFromCache(Guid id)
+    {
+        if (!_cachedNotes.Remove(id))
+            throw new KeyNotFoundException($"Note with ID {id} not found in cache.");
+        
+        _logService.Log($"Deleted note {id} from cache");
+        return;
+    }
+    
+    //TODO Integrate FluentValidation
+    protected virtual bool ValidateNote(Note note) => _validator.Validate(note);
+
+}

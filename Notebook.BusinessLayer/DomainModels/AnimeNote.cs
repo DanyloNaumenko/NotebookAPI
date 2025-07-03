@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Reflection.Metadata;
-using AnimeNotesAPI.enums;
+using Notebook.BusinessLayer.Enums;
 
-namespace AnimeNotesAPI;
+namespace Notebook.BusinessLayer.DomainModels;
 
 public record AnimeNote : Note
 {
