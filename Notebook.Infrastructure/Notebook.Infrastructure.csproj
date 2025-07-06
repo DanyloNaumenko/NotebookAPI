@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Notebook.Infrastructure</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="DAL\Interfaces\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Notebook.BusinessLayer\Notebook.BusinessLayer.csproj" />
+    </ItemGroup>
+
+</Project>
