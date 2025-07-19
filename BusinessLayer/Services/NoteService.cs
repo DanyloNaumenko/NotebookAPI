@@ -1,6 +1,7 @@
 using Domain.Models;
 using Domain.Interfaces;
 using BusinessLayer.Interfaces;
+using System.Reflection;
 
 namespace BusinessLayer.Services;
 
@@ -27,27 +28,43 @@ public class NoteService : INoteService
     }
     public Note GetNoteById(Guid id) 
     {
+        //var note = _noteProvider.GetById(id);
         if (!CachedNotes.TryGetValue(id, out var note))
             throw new KeyNotFoundException($"Note with id {id} not found.");
         _logService.Log($"Got note {id} successfully");
         return note;
     }
+    public ICollection<Note> GetAll()
+    {
+        //ICollection<Note> noteList = _noteProvider.GetAll();
+        ICollection<Note> noteList = CachedNotes.Values;
+        _logService.Log($"Returned list of {noteList.Count} notes");
+        return CachedNotes.Values;
+    }
     public bool UpdateNoteById(Guid id, Note newNote)
     {
         var result = false;
-        if (!ValidateNote(newNote)) return false;
-        
-        result = _noteProvider.Update(id, newNote);
-        UpdateNoteInCache(id, newNote);
-        _logService.Log($"Updated note {id} successfully");
-        return result; 
+        if (!ValidateNote(newNote)) return result;
+
+        //result = _noteProvider.Update(id, newNote);
+        result = true;
+        if (result == true)
+        {
+            UpdateNoteInCache(id, newNote);
+            _logService.Log($"Updated note {id} successfully");
+        }
+        return result;
     }
     public bool DeleteNoteById(Guid id) 
     {
         var result = false;
-        result = _noteProvider.Delete(id);
-        DeleteNoteFromCache(id);
-        _logService.Log($"Deleted note {id} successfully");
+        //result = _noteProvider.Delete(id);
+        result = true;
+        if (result == true)
+        {
+            DeleteNoteFromCache(id);
+            _logService.Log($"Deleted note {id} successfully");
+        }
         return result;
     }
     private void UpdateNoteInCache(Guid id, Note newNote)

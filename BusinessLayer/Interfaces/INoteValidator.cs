@@ -4,5 +4,5 @@ namespace BusinessLayer.Interfaces;
 
 public interface INoteValidator
 {
-    bool Validate(Note note);
+    public bool Validate(Note note);
 }
