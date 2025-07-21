@@ -9,4 +9,5 @@ public interface INoteService
     public ICollection<Note> GetAll();
     public bool UpdateNoteById(Guid id, Note newNote);
     public bool DeleteNoteById(Guid id);
+
 }

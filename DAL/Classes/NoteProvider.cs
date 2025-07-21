@@ -16,6 +16,7 @@ public class NoteProvider : INoteProvider
     {
         throw new NotImplementedException();
     }
+
     public ICollection<Note> GetAll()
     {
         throw new NotImplementedException();

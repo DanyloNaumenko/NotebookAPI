@@ -67,6 +67,7 @@ public class NoteService : INoteService
         }
         return result;
     }
+
     private void UpdateNoteInCache(Guid id, Note newNote)
     {
         if (!CachedNotes.ContainsKey(id))
@@ -99,5 +100,4 @@ public class NoteService : INoteService
     
     //TODO Integrate FluentValidation
     protected virtual bool ValidateNote(Note note) => _validator.Validate(note);
-
 }
