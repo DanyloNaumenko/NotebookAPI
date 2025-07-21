@@ -4,8 +4,9 @@ namespace Domain.Interfaces;
 
 public interface INoteProvider
 {
-    Note Create();
-    Note GetById(Guid id);
-    bool Update(Guid id, Note updatedNote);
+    public Note Create();
+    public Note GetById(Guid id);
+    public ICollection<Note> GetAll();
+    public bool Update(Guid id, Note updatedNote);
     public bool Delete(Guid id);
 }

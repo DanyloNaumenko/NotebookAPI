@@ -4,8 +4,9 @@ namespace BusinessLayer.Interfaces;
 
 public interface INoteService
 {
-    Note Create();
-    Note GetNoteById(Guid id);
-    bool UpdateNoteById(Guid id, Note newNote);
-    bool DeleteNoteById(Guid id);
+    public Note Create();
+    public Note GetNoteById(Guid id);
+    public ICollection<Note> GetAll();
+    public bool UpdateNoteById(Guid id, Note newNote);
+    public bool DeleteNoteById(Guid id);
 }

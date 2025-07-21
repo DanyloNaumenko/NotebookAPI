@@ -5,6 +5,7 @@ namespace DAL.Classes;
 
 //TODO Implement Class
 public class NoteProvider : INoteProvider
+
 {
     public Note Create()
     {
@@ -15,7 +16,10 @@ public class NoteProvider : INoteProvider
     {
         throw new NotImplementedException();
     }
-
+    public ICollection<Note> GetAll()
+    {
+        throw new NotImplementedException();
+    }
     public bool Update(Guid id, Note updatedNote)
     {
         throw new NotImplementedException();

@@ -1,5 +1,4 @@
 bin/
 obj/
 .idea/
-PasswordToDb.txt
-.vs/
+.vs
