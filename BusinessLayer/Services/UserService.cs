@@ -67,7 +67,7 @@ public class UserService : IUserService
 
     public bool UpdateById(Guid id, User newUser)
     {
-        CheckIfUserExistsById(id);
+        if(!CheckIfUserExistsById(id)) return false;
         if(!_validator.Validate(newUser)) throw new Exception("Invalid login or password");  
         CachedUsers[id] = newUser;
         _logService.Log($"Updated user {newUser}");
@@ -79,7 +79,6 @@ public class UserService : IUserService
     {
         if (CheckIfUserExistsById(id))
         {
-            _userProvider.DeleteById(id);
             CachedUsers.Remove(id);
             _logService.Log($"Deleted user {id}");
         };
