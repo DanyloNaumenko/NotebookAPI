@@ -4,6 +4,7 @@ namespace Domain.Models;
 
 public record AnimeNote : Note
 {
+    public Guid Id { get; init; }
     public int Rating { get; init; }
     public TimeSpan PeriodOfWatching { get; init; }
     public List<Genres> Genres { get; init; } = new();
