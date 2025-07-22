@@ -7,7 +7,7 @@ namespace DAL.Classes;
 public class NoteProvider : INoteProvider
 
 {
-    public Note Create()
+    public Note Create(Note note)
     {
         throw new NotImplementedException();
     }
@@ -21,12 +21,12 @@ public class NoteProvider : INoteProvider
     {
         throw new NotImplementedException();
     }
-    public bool Update(Guid id, Note updatedNote)
+    public bool UpdateById(Guid id, Note updatedNote)
     {
         throw new NotImplementedException();
     }
 
-    public bool Delete(Guid id)
+    public bool DeleteById(Guid id)
     {
         throw new NotImplementedException();
     }

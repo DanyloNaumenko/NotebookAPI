@@ -48,15 +48,6 @@ public class UserService : IUserService
         return user;
     }
 
-    public User GetByLogin(string login)
-    {
-        //var user = _userProvider.GetByLogin(login);
-        var user = CachedUsers.Values.FirstOrDefault(u => u.Login == login);
-        if (user == null) throw new KeyNotFoundException($"User with login {login} not found");
-        _logService.Log($"Get user {user}");
-        return user;
-    }
-
     public ICollection<User> GetAll()
     {
         //var users = _userProvider.GetAll();
@@ -84,11 +75,6 @@ public class UserService : IUserService
         };
         return true;
         //return _userProvider.Delete(id);
-    }
-
-    public bool AddNoteToUser<TNote>(TNote note) where TNote : Note
-    {
-        
     }
 
     private string HashPassword(string password) => password; //TODO 

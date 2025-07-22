@@ -57,7 +57,7 @@ public class NoteService : INoteService
         if(!CheckIfNoteExistsById(id)) return false;
         if(!_validator.Validate(newNote)) throw new Exception("Validation failed");  
         CachedNotes[id] = newNote;
-        _logService.Log($"Updated user {newnote}");
+        _logService.Log($"Updated user {newNote}");
         return true;
         //return _userProvider.UpdateById(id, newUser);
     }
